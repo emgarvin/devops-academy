@@ -1,2 +1,1 @@
-#!/bin/sh
-echo "hello world"
+This is an update to devops-academy/helloworld.sh
