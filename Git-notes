@@ -76,3 +76,43 @@ grep = search text. \n
 git log | grep add
 git log | grep add -B 5
 git log --grep add   does both at once
+git commit --amend = you've committed a commit message but you didn't put enough information in, you're not changing the files but you ARE changing the commit message. Doesn't affect the files committed, just the message. Just amend the latest commit, not old ones.
+git rebase - the command Martin hates most - squashes all the commits into one - loses a lot of commit data in the process, makes it harder to debug in the future. Avoid if possible.
+vi .gitignore = edit the .gitignore config file. Tell git about files it should ignore (eg sensitive files with data or passwords, /target/* in maven
+*.jar, or other regex will ignore whole patterns of files
+Will also prevent these files from showing up in untracked if you use git status
+
+git submodules = smaller subprojects
+
+aliases = shorthand for a command
+
+git config --global alias.st status = just type git st to get the status
+
+BASH ALIASES
+go to home directory
+vi ~/.bashrc
+alias gs='git status'
+alias sd='sudo docker'
+THEN TYPE bash TO RESET reinitialise the bash config
+
+git config 
+============================
+more config
+more HEAD
+more COMMIT_EDITMSG -- what is the template for a commit message? could add a ticket number requirement for example. 
+find logs/ = list files in logs
+find . -name heads
+
+.git/hooks
+= as we're doing commands we can have a hook to say "before I commit, do this"
+= can use the samples in /hooks by removing the .sample
+= can set a unit test to run before something is committing, and fail if unit test fails
+
+.git/hooks/commit-msg = check for certain information in the commit
+
+ls -lthri /bin/sh
+
+in linux, exit code 0 = true/great/all working, anything else = something has gone wrong. 
+
+cd -  = go back to the directory you were in
+ 
