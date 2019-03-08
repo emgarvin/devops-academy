@@ -1,0 +1,71 @@
+Cloning – cloning down = download a copy of a repo locally, can change it locally but no access to the master repo
+
+Git init = create new git project
+
+Ls –a  = show hidden files
+
+Git status = show what git sees, what’s under its control, what it can track – importantly, what is NOT TRACKED by git
+
+Git ad d = stage files, add them to git’s tracked list and ready them to be committed
+
+Git commit –m “added helloworld.sh and cattest.sh” = write a commit message and create a commit
+
+Git log = show commit history FROM CURRENT BRANCH (there are ways to get logs of other branches)
+
+Git remote add origin https://github.com/emgarvin/devops-academy.git
+
+Git remote –v = show the origins
+
+Git push origin master
+
+Git pull – pulls down EVERYTHING in the repo (has to have a .git in the folder)
+
+Git pull origin master – get a specific branch (master)
+
+Git log -1 = just see last commit
+
+Git blame helloworld.sh
+
+Git config - -local/global user.name “emgarvin”
+Git config - -local/global user.email “gar18@” 
+
+Git config - -global core.editer “vim”
+
+Git show COMMITHASH – show changes made in commit
+
+Git show –name-only COMMITHASH = show only the title of files that were changed
+
+Git show –p COMMITHASH:FILENAME = show what’s in the file in this commit; investigate problems which showed up in the past
+
+Git checkout COMMITHASH = change active version to version at the time of commit
+ You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+git checkout master = go back to master head commit
+
+git checkout –b yay-my-first-branch = create new branch based on current commit
+git push origin yay-my-first-branch = you need to specify the destination for a new branch because no upstream has been created yet
+
+git merge 
+
+git checkout HEAD~1 or HEAD~2 – check out to the commit before the latest commit, usw
+
+git branch steven-feature – create a branch at current position, BUT it’s not checked out the way it would have been if you used git checkout –b steven-feature
+
+git stash – save stuff in staging area, without committing it. Doesn’t need any further arguments.
+
+Git stash list – see what stashes you have.
+ 
+Git stash apply STASHNAME – go back to working on your stashed work, can commit from there
+
+Git stash pop STASHNAME – same as apply, but delete the saved copy of the stash
+
+Git stash drop STASHNAME – get rid of stash
+
+ctrl u = cut command to buffer. ctrl y = paste command

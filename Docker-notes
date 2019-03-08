@@ -1,0 +1,60 @@
+Sudo docker rm CONTAINERID
+
+Sudo docker rmi $(sudo docker images/ps –q) = bash functions, passes image list to rmi command
+Sudo docker images –q = get a list of image ids
+
+Sudo docker build –t name:tag SOURCEDIR ------ don’t use the sourcerepo name as name (if you’re using nginx as a base, don’t call it nginx)
+Sudo docker run - -name NAMECONTAINER name:tag
+Sudo docker start NAMECONTAINER
+Sudo docker stop NAMECONTAINER
+
+Sudo docker build –t emgar/firstimage . = emgar/firstimage:latest = default
+Sudo docker tag emgar/firstimage emgar/firstimage:v0.4 adds an additional tag
+
+Sudo docker logs CONTAINERNAME or CONTAINERID
+Sudo docker history IMAGEID
+
+Sudo docker pull NAME:TAG – pull existing image from dockerhub
+
+Sudo docker run - -it name:tag /bin/bash (or /bin/sh)
+-	i = interactive
+-	t = create a terminal (bash, sh, zsh, etc)
+
+sudo docker login - -username emgar - -password-stdin
+
+/bin = kernel programs (eg touch, rmdir, mkdir, etc)
+/usr/bin = user installed programs (+ some preinstalled like whoami), docker is installed here
+
+When running bash or python scripts you need to tell linux where to find the interpreter/what environment it should run in ie:
+-	#!/usr/bin/env python3
+-	#!/bin/sh
+
+Sudo docker run –d –p 8080:80 nginx 
+Left = host - map 8080 to 80
+
+Sudo docker attach CONTAINERID -> reattach a container that you used the –d flag to detach when you initially ran it
+Sudo docker exec –i –t CONTAINERID/CONTAINERNAME /bin/sh
+
+CTRL P -> CTRL Q = exit sequence from docker container 
+
+Run = create new container from image
+Start = restart existing image that’s been stopped
+Exec = log in to running container by opening a new shell, if you exit the container can keep running
+Attach = log in to running container and see what the container is seeing on standard output/on the same shell, if you exit it will close it down  
+
+Sudo docker inspect CONTAINERID/IMAGEID
+-	Can get Internal ip address this way/network id/endpoint/all sorts of things
+-	Gateway = the point at which the container contacts docker/the VMsudo 
+
+Sudo docker diff NAME – log of file changes, logged and stored on docker layer, persists after container is shut down
+
+Sudo docker event – set alarms/actions on event happen
+
+Sudo docker stats – see mem usage/net i/o /pids for running containers, live update, + cpu usage
+
+Sudo docker save emgar/firstimage –o here
+
+Docker compose – quickly start up a bunch of containers on local / test server, for testing purposes, not for production
+
+Yaml = key-value pairs, simpler than xml, for docker compose files (or other config files)
+
