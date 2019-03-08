@@ -69,3 +69,10 @@ Git stash pop STASHNAME – same as apply, but delete the saved copy of the stas
 Git stash drop STASHNAME – get rid of stash
 
 ctrl u = cut command to buffer. ctrl y = paste command
+ctrl a = bring you back to the start of the current comment.
+ctrl e = take you to the end of the command
+ctrl w = delete current word in command
+grep = search text. \n
+git log | grep add
+git log | grep add -B 5
+git log --grep add   does both at once
